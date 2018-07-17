@@ -1,0 +1,84 @@
+
+\documentclass[a4paper,spanish,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{fontenc}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{listings}
+\usepackage{moreverb}             % Para que separe bien las sílabas
+\usepackage{caratula} 
+\usepackage{a4wide}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\lstset{                % general command to set parameter(s)
+ language=C,
+ basicstyle=\small,      % print whole listing small
+ keywordstyle=\bfseries, % underlined bold black keywords
+ stringstyle=\ttfamily, % typewriter type for strings
+ showstringspaces=false
+} 
+\lstset{
+ numbers=left, 
+ numberstyle=\tiny, 
+ stepnumber=5,
+ numbersep=5pt}	
+
+
+ \newcommand{\integranteuno}{Castro - }
+ 
+ \newcommand{\materiaP}{Investigación Operativa} 
+ \newcommand{\tituloTP}{Trabajo Práctico} 
+ \newcommand{\subTituloTP}{} 
+ %\newcommand{\cuatHEADER}{2C 2008}
+
+\pagestyle{fancyplain} 
+
+\begin{document}
+
+\titulo{\tituloTP}
+\fecha{\today}
+\materia{\materiaP}
+%\grupo{Nombre Grupo}
+\integrante{Castro, Sabrina Elizabeth}{572/01}{sabrinaecastro@gmail.com}
+
+\maketitle
+
+
+\fancyhf{} %borra 
+ \setcounter{page}{1}%que el contador empiece de uno con la primer pagina, no con la caratula
+\lhead[\materiaP]{\materiaP}
+% \rhead[\cuatHEADER]{\cuatHEADER}
+ 
+ \lfoot[\subTituloTP]{\integranteuno \tituloTP}
+ \rfoot[{\thepage}]{{\thepage}}
+
+
+%\begin{abstract}
+
+ 
+%\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+%\section{Introducci\'on}
+%    \input{secciones/intro}
+%    \newpage
+    \input{secciones/Problema12.1-12.2}
+    \newpage
+    \input{secciones/Problema12.6}
+    \newpage
+    \input{secciones/Problema12.13}
+    \newpage
+    \input{secciones/Problema12.15-12.16}
+    \newpage
+    \input{secciones/Problema12.15-12.16}
+    \newpage
+    \input{secciones/Problema12.23}
+%\section{Bibliografia}
+\end{document}

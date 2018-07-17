@@ -1,0 +1,419 @@
+\section{Mercado compartido}
+\subsection{Enunciado}
+\paragraph{} Una compañía grande tiene dos divisiones, D1 y D2. La compañía provee a los minoristas con aceite y alcohol. Esta es una versión mucho más pequeña del problema al que se enfrentaron British Petroleum y Shell cuando se vieron obligados a abandonar, una de las divisiones más grandes de la historia. El modelo original resultó imposible de resolver en 1972.
+\paragraph{} Se desea asignar a cada minorista una división D1 o D2. Esta división será el proveedor del minorista. En la medida de lo posible, esta división debe realizarse de modo que D1 controle el 40\% del mercado y D2 el 60\% restante. Los minoristas se enumeran a continuación como M1 a M23. Cada minorista tiene un mercado estimado para aceite y alcohol. Los minoristas M1 a M8 están en la región 1; los minoristas M9 a M18 están en la región 2 y los minoristas M19 a M23 están en la región 3. Se considera que algunos minoristas tienen buenas perspectivas de crecimiento y se clasifican en el grupo A y los otros en el grupo B. Cada minorista tiene un cierto número de puntos de entrega, como se indica a continuación. Se desea dividir la división 40/60 entre D1 y D2 en cada uno de los siguientes aspectos:
+\begin{enumerate}
+\item Número total de puntos de entrega
+\item Control de mercado de alcohol
+\item Control de mercado de aceite en la región 1
+\item Control de mercado de aceite en la región 2
+\item Control de mercado de aceite en la región 3
+\item Numero de minoristas en el grupo A
+\item Numero de minoristas en el grupo B
+\end{enumerate}
+\paragraph{} Existe cierta flexibilidad en cuanto a que cualquier acción puede variar en $\pm$ 5\%. Esa es la parte puede muy entre los límites 35/65 y 45/55.
+\paragraph{} El objetivo principal es encontrar una solución factible. Sin embargo, si hay alguna opción, los posibles objetivos son (i) minimizar la suma de las desviaciones porcentuales de la división 40/60 y (ii) minimizar la desviación máxima.
+\paragraph{} Cree un modelo para ver si el problema tiene una solución viable y, de ser así, encuentre las soluciones óptimas.
+\paragraph{} Los datos numéricos se dan en la siguiente tabla:
+
+\subsection{Modelo}
+$\begin{array}{l}
+D1PEM_{i}:\mbox{indica si M i esta en la división D1 segun el punto de entrega}\\
+TD1PE:\mbox{total de puntos de entrega de los M i en la división D1}\\
+PorcPuntoEntregaD1:\mbox{pocentaje de puntos de entrega de los M i en la división D1}\\
+D2PEaM_{i}:\mbox{indica si M i esta en la división D2 segun el punto de entrega}\\
+TD2PE:\mbox{total de puntos de entrega de los M i en la división D2}\\
+PorcPuntoEntregaD2:\mbox{pocentaje de puntos de entrega de los M i en la división D2}\\
+D1MAM_{i}:\mbox{indica si M i esta en la división D1 segun el mercado de alcohol}\\
+TD1MA:\mbox{total de mercado alcohol de los M i en la división D1}\\
+PorcMAlcoholD1:\mbox{porcentaje de mercado alcohol de los M i en la división D1}\\
+D2MAM_{i}:\mbox{indica si M i esta en la división D2 segun el mercado de alcohol}\\
+TD2MA:\mbox{total de mercado alcohol de los M i en la división D2}\\
+PorcMAlcoholD2:\mbox{porcentaje de mercado alcohol de los M i en la división D2}\\
+D1R1M_{i}:\mbox{indica si M i esta en la división D1 segun la región 1}\\
+TD1R1:\mbox{total de region 1 de los M i en la división D1}\\
+PorcRegion1D1:\mbox{porcentaje de region 1 de los M i en la división D1}\\
+D2R1M_{i}:\mbox{indica si M i esta en la división D2 segun la región 1}\\
+TD2R1:\mbox{total de region 1 de los M i en la división D2}\\
+PorcRegion1D2:\mbox{porcentaje de region 1 de los M i en la división D2}\\
+D1R2M_{i}:\mbox{indica si M i esta en la división D1 segun la región 2}\\
+TD1R2:\mbox{total de region 2 de los M i en la división D1}\\
+PorcRegion2D1:\mbox{porcentaje de region 2 de los M i en la división D1}\\
+D2R2M_{i}:\mbox{indica si M i esta en la división D2 segun la región 2}\\
+TD2R2:\mbox{total de region 2 de los M i en la división D2}\\
+PorcRegion2D2:\mbox{porcentaje de region 2 de los M i en la división D2}\\
+D1R3M_{i}:\mbox{indica si M i esta en la división D1 segun la región 3}\\
+TD1R3:\mbox{total de region 3 de los M i en la división D1}\\
+PorcRegion3D1:\mbox{porcentaje de region 3 de los M i en la división D1}\\
+D2R3M_{i}:\mbox{indica si M i esta en la división D2 segun la región 3}\\
+TD2R3:\mbox{total de region 3 de los M i en la división D2}\\
+PorcRegion3D2:\mbox{porcentaje de region 3 de los M i en la división D2}\\
+D1GAM_{i}:\mbox{indica si M i esta en la división D1 segun grupo A}\\
+TD1GA:\mbox{total de categoria A de los M i en la división D1}\\
+PorcGrupoAD1:\mbox{porcentaje de categoria A de los M i en la división D1}\\
+D2GAM_{i}:\mbox{indica si M i esta en la división D2 segun grupo A}\\
+TD2GA:\mbox{total de categoria A de los M i en la división D2}\\
+PorcGrupoAD2:\mbox{porcentaje de categoria A de los M i en la división D2}\\
+D1GBM_{i}:\mbox{indica si M i esta en la división D1 segun grupo B}\\
+TD1GB:\mbox{total de categoria B de los M i en la división D1}\\
+PorcGrupoBD1:\mbox{porcentaje de categoria B de los M i en la división D1}\\
+D2GBM_{i}:\mbox{indica si M i esta en la división D2 segun grupo B}\\
+TD2GB:\mbox{total de categoria B de los M i en la división D2}\\
+PorcGrupoBD2:\mbox{porcentaje de categoria B de los M i en la división D2}\\
+%\mbox{donde} \;\;\;\;\;\; i=1,2,3, \ldots , 23  
+\end{array}$
+\\ \\
+$$ \mbox{max } $$
+\\ 
+sujeto a\\\\
+Suma total de puntos de entrega de los minoristas M i en  D1 
+\begin{equation*}
+\begin{split}
+  TD1PE = & 11 D1PEM_1 + 47 D1PEM_2 + 44 D1PEM_3 + 25 D1PEM_4 + \\ 
+  		  & 10 D1PEM_5 + 26 D1PEM_6 + 26 D1PEM_7 + 54 D1PEM_8 + \\
+  		  & 18 D1PEM_9 + 51 D1PEM_{10} + 20 D1PEM_{11} + 105 D1PEM_{12} + \\ 
+  		  &  7 D1PEM_{13} + 16 D1PEM_{14} + 34 D1PEM_{15} + 100 D1PEM_{16} + \\ 
+  		  & 50 D1PEM_{17} + 21 D1PEM_{18} + 11 D1PEM_{19} + 19 D1PEM_{20} + \\
+		  & 14 D1PEM_{21} + 10 D1PEM_{22} + 11 D1PEM_{23} 
+\end{split}
+\end{equation*}
+Suma total de puntos de entrega de los minoristas M i en  D2 
+\begin{equation*}
+\begin{split}
+  TD2PE = & 11 D2PEM_1 + 47 D2PEM_2 + 44 D2PEM_3 + 25 D2PEM_4 + \\ 
+  		  & 10 D2PEM_5 + 26 D2PEM_6 + 26 D2PEM_7 + 54 D2PEM_8 + \\
+  		  & 18 D2PEM_9 + 51 D2PEM_{10} + 20 D2PEM_{11} + 105 D2PEM_{12} + \\ 
+  		  &  7 D2PEM_{13} + 16 D2PEM_{14} + 34 D2PEM_{15} + 100 D2PEM_{16} + \\ 
+  		  & 50 D2PEM_{17} + 21 D2PEM_{18} + 11 D2PEM_{19} + 19 D2PEM_{20} + \\
+		  & 14 D2PEM_{21} + 10 D2PEM_{22} + 11 D2PEM_{23} 
+\end{split}
+\end{equation*}
+La suma de los minorista de puntos de entrega en D1 y D2 deben ser 23
+\begin{equation*}
+\begin{split}
+23 = & D1PEM_1 + D1PEM_2 + D1PEM_3 + D1PEM_4 + D1PEM_5 + D1PEM_6 + \\
+     & D1PEM_7 + D1PEM_8 + D1PEM_9 + D1PEM_{10} + D1PEM_{11} + D1PEM_{12} +\\
+     & D1PEM_{13} + D1PEM_{14} + D1PEM_{15} + D1PEM_{16} + D1PEM_{17} + \\
+     & D1PEM_{18} + D1PEM_{19} + D1PEM_{20} + D1PEM_{21} + D1PEM_{22} + \\
+	 & D1PEM_{23} + D2PEM_1 + D2PEM_2 + D2PEM_3 + D2PEM_4 + D2PEM_5 + \\
+	 & D2PEM_6 + D2PEM_7 + D2PEM_8 + D2PEM_9 + D2PEM_{10} + D2PEM_{11} + \\
+	 & D2PEM_{12} + D2PEM_{13} + D2PEM_{14} + D2PEM_{15} + D2PEM_{16} + D2PEM_{17} +\\
+	 & D2PEM_{18} + D2PEM_{19} + D2PEM_{20} + D2PEM_{21} + D2PEM_{22} + D2PEM_{23}
+\end{split}
+\end{equation*}
+Suma total de mercado alcohol de los M i en la división D1
+\begin{equation*}
+\begin{split}
+  TD1MA = & 34  D1MAM_1 + 411 D1MAM_2 + 82 D1MAM_3 + 157 D1MAM_4 + \\ 
+  		  &  5  D1MAM_5 + 183 D1MAM_6 + 14 D1MAM_7 + 215 D1MAM_8 + \\
+  		  & 102 D1MAM_9 + 21  D1MAM_{10} + 54 D1MAM_{11} + 0 D1MAM_{12} + \\ 
+  		  &  6 D1MAM_{13} + 96 D1MAM_{14} + 118 D1MAM_{15} + 112 D1MAM_{16} + \\ 
+  		  & 535 D1MAM_{17} + 8 D1MAM_{18} +  53 D1MAM_{19} + 28 D1MAM_{20} + \\
+		  & 69 D1MAM_{21} + 65 D1MAM_{22} + 27 D1MAM_{23} 
+\end{split}
+\end{equation*}
+Suma total de mercado alcohol de los M i en la división D2
+\begin{equation*}
+\begin{split}
+  TD2MA = & 34 D2MAM_1 + 411 D2MAM_2 + 82 D2MAM_3 + 157 D2MAM_4 + \\ 
+  		  & 5 D2MAM_5 + 183 D2MAM_6 + 14 D2MAM_7 + 215 D2MAM_8 + \\
+  		  & 102 D2MAM_9 + 21 D2MAM_{10} + 54 D2MAM_{11} + 0 D2MAM_{12} + \\ 
+  		  & 6 D2MAM_{13} + 96 D2MAM_{14} + 118 D2MAM_{15} + 112 D2MAM_{16} + \\ 
+  		  & 535 D2MAM_{17} + 8 D2MAM_{18} +  53 D2MAM_{19} + 28 D2MAM_{20} + \\
+		  & 69 D2MAM_{21} + 65 D2MAM_{22} + 27 D2MAM_{23} 
+\end{split}
+\end{equation*}
+
+La suma de los minorista de mercado alcohol en D1 y D2 deben ser 23
+\begin{equation*}
+\begin{split}
+23 =  	&  D1MAM_1 + D1MAM_2 + D1MAM_3 + D1MAM_4 + D1MAM_5 +\\ 
+      	&  D1MAM_6 + D1MAM_7 + D1MAM_8 + D1MAM_9 + D1MAM_{10} +\\
+  		&  D1MAM_{11} + D1MAM_{12} + D1MAM_{13} + D1MAM_{14} +\\ 
+  		&  D1MAM_{15} + D1MAM_{16} + D1MAM_{17} + D1MAM_{18} + \\ 
+  		&  D1MAM_{19} + D1MAM_{20} + D1MAM_{21} + D1MAM_{22} + \\
+		&  D1MAM_{23} + D2MAM_1 + D2MAM_2 + D2MAM_3 + D2MAM_4 +\\
+		&  D2MAM_5 + D2MAM_6 + D2MAM_7 + D2MAM_8 + D2MAM_9 + \\
+		&  D2MAM_{10} + D2MAM_{11} + D2MAM_{12} +  D2MAM_{13} + \\
+		&  D2MAM_{14} + D2MAM_{15} + D2MAM_{16} + D2MAM_{17} + \\
+		&  D2MAM_{18} + D2MAM_{19} + D2MAM_{20} + D2MAM_{21} + \\
+		&  D2MAM_{22} + D2MAM_{23}\\
+\end{split}
+\end{equation*}
+
+
+
+Total mercado aceite region 1 de los M i en la división D1
+\begin{equation*}
+\begin{split}
+  TD1R1 = &  9 D1R1M_1 + 13 D1R1M_2 + 14 D1R1M_3 + 17 D1R1M_4 + \\ 
+  		  & 18 D1R1M_5 + 19 D1R1M_6 + 23 D1R1M_7 + 21 D1R1M_8
+\end{split}
+\end{equation*}
+Total mercado aceite region 1 de los M i en la división D2
+\begin{equation*}
+\begin{split}
+  TD2R1 = &  9 D2R1M_1 + 13 D2R1M_2 + 14 D2R1M_3 + 17 D2R1M_4 + \\ 
+  		  & 18 D2R1M_5 + 19 D2R1M_6 + 23 D2R1M_7 + 21 D2R1M_8 
+\end{split}
+\end{equation*}
+Total mercado de aceite region 2 de los M i en la división D1
+\begin{equation*}
+\begin{split}
+  TD1R2 = &  9 D1R2M_9 + 11 D1R2M_{10} + 17 D1R2M_{11} + 18 D1R2M_{12} + 18 D1R2M_{13} +\\ 
+  		  & 17 D1R2M_{14} + 22 D1R2M_{15} + 24 D1R2M_{16} + 36 D1R2M_{17} + 43 D1R2M_{18}
+\end{split}
+\end{equation*}
+Total mercado de aceite region 2 de los M i en la división D2
+\begin{equation*}
+\begin{split}
+  TD2R2 = &  9 D2R2M_9 + 11 D2R2M_{10} + 17 D2R2M_{11} + 18 D2R2M_{12} + 18 D2R2M_{13} +\\ 
+  		  & 17 D2R2M_{14} + 22 D2R2M_{15} + 24  D2R2M_{16} + 36 D2R2M_{17} + 43 D2R2M_{18}
+\end{split}
+\end{equation*}
+Total mercado de aceite region 3 de los M i en la división D1
+\begin{equation*}
+\begin{split}
+  TD1R3 = & 6 D1R3M_{19} + 15 D1R3M_{20} + 15 D1R3M_{21} + 25 D1R3M_{22} + 39 D1R3M_{23} 
+\end{split}
+\end{equation*}
+Total mercado de aceite region 3 de los M i en la división D2
+\begin{equation*}
+\begin{split}
+  TD2R3 = & 6 D2R3M_{19} + 15 D2R3M_{20} + 15 D2R3M_{21} + 25 D2R3M_{22} + 39 D2R3M_{23} 
+\end{split}
+\end{equation*}
+La suma de los minorista de mercado de aceite de las regiones 1,2 y 3 de los M i en la división en D1 y D2 deben ser 23
+\begin{equation*}
+\begin{split}
+23 =  	&  D1R1M_1 + D1R1M_2 + D1R1M_3 + D1R1M_4 + D1R1M_5 + D1R1M_6 + D1R1M_7 + D1R1M_8 \\
+		& + D2R1M_1 + D2R1M_2 + D2R1M_3 + D2R1M_4 + D2R1M_5 + D2R1M_6 + D2R1M_7 + D2R1M_8 \\
+		& + D1R2M_9 + D1R2M_{10} + D1R2M_{11} + D1R2M_{12} + D1R2M_{13} + D1R2M_{14} + D1R2M_{15} \\ 
+		& + D1R2M_{16} + D1R2M_{17} + D1R2M_{18} + D2R2M_9 + D2R2M_{10} + D2R2M_{11} + D2R2M_{12} \\
+		& + D2R2M_{13} + D2R2M_{14} + D2R2M_{15} + D2R2M_{16} + D2R2M_{17} + D2R2M_{18} + D1R3M_{19} \\
+		& + D1R3M_{20} + D1R3M_{21} + D1R3M_{22} + D1R3M_{23} + D2R3M_{19} + D2R3M_{20} + D2R3M_{21} \\
+		& + D2R3M_{22} + D2R3M_{23}
+\end{split}
+\end{equation*}
+Total de categoria A de los M i en la división D1
+\begin{equation*}
+\begin{split}
+  TD1GA = & D1GAM_1 + D1GAM_2 + D1GAM_3 + D1GAM_5 + D1GAM_6 +\\
+          & D1GAM_{10} + D1GAM_{15} + D1GAM_{20} 
+\end{split}
+\end{equation*}
+Total de categoria A de los M i en la división D2
+\begin{equation*}
+\begin{split}
+  TD2GA = & D2GAM_1 + D2GAM_2 + D2GAM_3 + D2GAM_5 + D2GAM_6 +\\
+          & D2GAM_{10} + D2GAM_{15} + D2GAM_{20} 
+\end{split}
+\end{equation*}
+Total de categoria B de los M i en la división D1
+\begin{equation*}
+\begin{split}
+  TD1GB = & D1GAM_4 + D1GAM_7 + D1GAM_8 + D1GAM_9 + D1GAM_{11} + \\
+          & D1GAM_{12} + D1GAM_{13} + D1GAM_{14} + D1GAM_{16} + D1GAM_{17} +\\
+          & D1GAM_{18} + D1GAM_{19} + D1GAM_{21} + D1GAM_{22} + D1GAM_{23}
+\end{split}
+\end{equation*}
+Total de categoria B de los M i en la división D2
+\begin{equation*}
+\begin{split}
+  TD2GB = & D2GAM_4 + D2GAM_7 + D2GAM_8 + D2GAM_9 + D2GAM_{11} +\\
+          & D2GAM_{12} + D2GAM_{13} + D2GAM_{14} + D2GAM_{16} + D2GAM_{17} +\\
+          & D2GAM_{18} + D2GAM_{19} + D2GAM_{21} + D2GAM_{22} + D2GAM_{23}
+\end{split}
+\end{equation*}
+La suma de los minorista de la categoria A y B en la división en D1 y D2 deben ser 23
+\begin{equation*}
+\begin{split}
+23 =  	&   D1GAM_1 + D1GAM_2 + D1GAM_3 + D1GAM_5 + D1GAM_6 +  D1GAM_{10} \\
+	    & + D1GAM_{15} + D1GAM_{20} + D2GAM_1 + D2GAM_2 + D2GAM_3 + D2GAM_5 \\
+	    & + D2GAM_6 + D2GAM_{10} + D2GAM_{15} + D2GAM_{20} + D1GAM_4 \\
+	    & + D1GAM_7 + D1GAM_8 + D1GAM_9 + D1GAM_{11} + D1GAM_{12} + D1GAM_{13} \\
+	    & + D1GAM_{14} + D1GAM_{16} + D1GAM_{17} + D1GAM_{18} + D1GAM_{19} \\
+	    & + D1GAM_{21} + D1GAM_{22} + D1GAM_{23} + D2GAM_4 + D2GAM_7 + D2GAM_8 \\
+	    & + D2GAM_9 + D2GAM_{11} + D2GAM_{12} + D2GAM_{13} + D2GAM_{14} \\
+	    & + D2GAM_{16} + D2GAM_{17} + D2GAM_{18} + D2GAM_{19} + D2GAM_{21} \\
+	    & + D2GAM_{22} + D2GAM_{23}
+\end{split}
+\end{equation*}
+
+
+\paragraph{} Se desea hacer la división 40/60 entre D1 y D2, flexibilidad en cuanto a que cualquier acción puede variar en $\pm$ 5 \%, osea los límites 35/65 y 45/55.\\ 
+\paragraph{Puntos de entrega} Obtenemos los porcentajes de los puntos de entrega de D1 y D2.  
+\begin{equation}
+PorcPuntoEntregaD1 = TD1PE \times 100 \div (TD1PE + TD2PE)
+\end{equation}
+\begin{equation}
+PorcPuntoEntregaD2 = TD2PE \times 100 \div (TD1PE + TD2PE)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcPuntoEntregaD1 + PorcPuntoEntregaD2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcPuntoEntregaD1 \geq 35
+\end{equation}
+\begin{equation}
+PorcPuntoEntregaD1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcPuntoEntregaD2 \geq 55
+\end{equation}
+\begin{equation}
+PorcPuntoEntregaD2 \leq 65
+\end{equation}
+\paragraph{Mercado de alcohol} Obtenemos los porcentajes de los mercados de alcohol de D1 y D2.  
+\begin{equation}
+PorcMAlcoholD1 = TD1MA \times 100 \div (TD1MA + TD2MA)
+\end{equation}
+\begin{equation}
+PorcMAlcoholD2 = TD2MA \times 100 \div (TD1MA + TD2MA)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcMAlcoholD1 + PorcMAlcoholD2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcMAlcoholD1 \geq 35
+\end{equation}
+\begin{equation}
+PorcMAlcoholD1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcMAlcoholD2 \geq 55
+\end{equation}
+\begin{equation}
+PorcMAlcoholD2 \leq 65
+\end{equation}
+\paragraph{Región 1} Obtenemos los porcentajes de la región 1 de D1 y D2.  
+\begin{equation}
+PorcRegion1D1 = TD1R1 \times 100 \div (TD1R1 + TD2R1)
+\end{equation}
+\begin{equation}
+PorcRegion1D2 = TD2R1 \times 100 \div (TD1R1 + TD2R1)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcRegion1D1 + PorcRegion1D2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcRegion1D1 \geq 35
+\end{equation}
+\begin{equation}
+PorcRegion1D1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcRegion1D2 \geq 55
+\end{equation}
+\begin{equation}
+PorcRegion1D2 \leq 65
+\end{equation}
+\paragraph{Región 2} Obtenemos los porcentajes de la región 2 de D1 y D2.  
+\begin{equation}
+PorcRegion2D1 = TD1R2 \times 100 \div (TD1R2 + TD2R2)
+\end{equation}
+\begin{equation}
+PorcRegion2D2 = TD2R2 \times 100 \div (TD1R2 + TD2R2)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcRegion2D1 + PorcRegion2D2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcRegion2D1 \geq 35
+\end{equation}
+\begin{equation}
+PorcRegion2D1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcRegion2D2 \geq 55
+\end{equation}
+\begin{equation}
+PorcRegion2D2 \leq 65
+\end{equation}
+\paragraph{Región 3} Obtenemos los porcentajes de la región 3 de D1 y D2.  
+\begin{equation}
+PorcRegion3D1 = TD1R3 \times 100 \div (TD1R3 + TD2R3)
+\end{equation}
+\begin{equation}
+PorcRegion3D2 = TD2R3 \times 100 \div (TD1R3 + TD2R3)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcRegion3D1 + PorcRegion3D2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcRegion3D1 \geq 35
+\end{equation}
+\begin{equation}
+PorcRegion3D1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcRegion3D2 \geq 55
+\end{equation}
+\begin{equation}
+PorcRegion3D2 \leq 65
+\end{equation}
+\paragraph{Grupo A} Obtenemos los porcentajes del grupo A de D1 y D2.  
+\begin{equation}
+PorcGrupoAD1 = TD1GA \times 100 \div (TD1GA + TD2GA)
+\end{equation}
+\begin{equation}
+PorcGrupoAD2 = TD2GA \times 100 \div (TD1GA + TD2GA)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcGrupoAD1 + PorcGrupoAD2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcGrupoAD1 \geq 35
+\end{equation}
+\begin{equation}
+PorcGrupoAD1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcGrupoAD2 \geq 55
+\end{equation}
+\begin{equation}
+PorcGrupoAD2 \leq 65
+\end{equation}
+\paragraph{Grupo B} Obtenemos los porcentajes del grupo B de D1 y D2.  
+\begin{equation}
+PorcGrupoBD1 = TD1GB \times 100 \div (TD1GB + TD2GB)
+\end{equation}
+\begin{equation}
+PorcGrupoBD2 = TD2GB \times 100 \div (TD1GB + TD2GB)
+\end{equation}
+La suma de los porcentajes tiene que ser igual al 100\%
+\begin{equation}
+PorcGrupoBD1 + PorcGrupoBD2 = 100
+\end{equation}
+D1 tiene que moverse entre 35 y 45 \%
+\begin{equation}
+PorcGrupoBD1 \geq 35
+\end{equation}
+\begin{equation}
+PorcGrupoBD1 \leq 45
+\end{equation}
+D2 tiene que moverse entre 55 y 65 \%
+\begin{equation}
+PorcGrupoBD2 \geq 55
+\end{equation}
+\begin{equation}
+PorcGrupoBD2 \leq 65
+\end{equation}

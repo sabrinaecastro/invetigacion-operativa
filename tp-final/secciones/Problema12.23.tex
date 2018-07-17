@@ -1,0 +1,37 @@
+\section{Colección de leche}
+\subsection{Enunciado}
+\paragraph{} Una pequeña empresa de procesamiento de leche se ha comprometido a recolectar leche de 20 granjas y llevarla al depósito para su procesamiento. La compañía tiene un camión cisterna con capacidad para transportar 80000 litros de leche. Once de las granjas son pequeñas y solo necesitan una recolección cada dos días. Las otras nueve granjas necesitan una colección todos los días. Las posiciones de las granjas en relación con el depósito (numeradas 1) junto con sus requisitos de recolección se muestran en la siguiente tabla:
+
+\begin{center}
+\begin{tabular}{ccccc}
+\hline 
+Granja & Posicion & 10 miles & Recolección  & Requisito de \\ 
+ &  &  & frecuencia & recolección \\ 
+ &  &  &  & (10001) \\ 
+\hline 
+1 (deposito) & 0 & 0 & - & - \\ 
+2 & -3 & 3 & Cada día & 5 \\ 
+3 & 1 & 11 & Cada día & 4 \\ 
+4 & 4 & 7 & Cada día & 3 \\ 
+5 & -5 & 9 & Cada día & 6 \\ 
+6 & -5 & -2 & Cada día & 7 \\ 
+7 & -4 & -7 & Cada día & 3 \\ 
+8 & 6 & 0 & Cada día & 4 \\ 
+9 & 3 & -6 & Cada día & 6 \\ 
+10 & -1 & -3 & Cada día & 5 \\ 
+11 & 0 & -6 & Cualquier otro día & 4 \\ 
+12 & 6 & 4 & Cualquier otro día & 7 \\ 
+13 & 2 & 5 & Cualquier otro día & 3 \\ 
+14 & -2 & 8 & Cualquier otro día & 4 \\ 
+15 & 6 & 10 & Cualquier otro día & 5 \\ 
+16 & 1 & 8 & Cualquier otro día & 6 \\ 
+17 & -3 & 1 & Cualquier otro día & 8 \\ 
+18 & -6 & 5 & Cualquier otro día & 5 \\ 
+19 & 2 & 9 & Cualquier otro día & 7 \\ 
+20 & -6 & -5 & Cualquier otro día & 6 \\ 
+21 & 5 & -4 & Cualquier otro día & 6 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\paragraph{} Encuentre la ruta óptima para el camión cisterna cada día, teniendo en cuenta que tiene que (i) visitar todas las granjas \' todos los días\', (ii) visitar algunas de las granjas \' cada dos días\' y (iii) trabajar dentro de es capacidad. En días alternos, debe volver a visitar las granjas \' todos los días\' y también visitar las granjas \' cada dos días \' no visitadas el día anterior.
+\paragraph{} Para mayor comodidad, se proporciona un mapa del área considerada en la figura 12.7.

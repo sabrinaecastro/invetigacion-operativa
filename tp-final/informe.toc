@@ -1,0 +1,95 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Fabricaci\IeC {\'o}n de alimentos}{2}
+\contentsline {subsection}{\numberline {1.1}Enunciado 12-1}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {subsection}{\numberline {1.2}Modelo}{3}
+\contentsline {subsection}{\numberline {1.3}Modelo CPLEX}{4}
+\contentsline {subsection}{\numberline {1.4}Solucion CPLEX}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {section}{\numberline {2}Fabricaci\IeC {\'o}n de alimentos extensi\IeC {\'o}n}{8}
+\contentsline {subsection}{\numberline {2.1}Enunciado 12-2}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {subsection}{\numberline {2.2}Modelo 12-2}{8}
+\contentsline {subsection}{\numberline {2.3}Optimizaci\IeC {\'o}n de refiner\IeC {\'\i }a}{10}
+\contentsline {subsubsection}{\numberline {2.3.1}Enunciado}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{Distilaci\IeC {\'o}n}{10}
+\contentsline {paragraph}{Reforma}{10}
+\contentsline {paragraph}{Craqueo}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{Mezcla}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {subsubsection}{\numberline {2.3.2}Modelo}{12}
+\contentsline {subsubsection}{\numberline {2.3.3}Modelo CPLEX}{13}
+\contentsline {subsubsection}{\numberline {2.3.4}Solucion CPLEX}{15}
+\contentsline {section}{\numberline {3}Mercado compartido}{16}
+\contentsline {subsection}{\numberline {3.1}Enunciado}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {subsection}{\numberline {3.2}Modelo}{17}
+\contentsline {paragraph}{}{21}
+\contentsline {paragraph}{Puntos de entrega}{21}
+\contentsline {paragraph}{Mercado de alcohol}{21}
+\contentsline {paragraph}{Regi\IeC {\'o}n 1}{22}
+\contentsline {paragraph}{Regi\IeC {\'o}n 2}{22}
+\contentsline {paragraph}{Regi\IeC {\'o}n 3}{22}
+\contentsline {paragraph}{Grupo A}{23}
+\contentsline {paragraph}{Grupo B}{23}
+\contentsline {section}{\numberline {4}Generaci\IeC {\'o}n de energ\IeC {\'\i }a}{24}
+\contentsline {subsection}{\numberline {4.1}Enunciado 12.5}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {paragraph}{}{24}
+\contentsline {subsection}{\numberline {4.2}Modelo 12.5}{25}
+\contentsline {subsection}{\numberline {4.3}Modelo CPLEX 12-15}{28}
+\contentsline {subsection}{\numberline {4.4}Solucion en CPLEX}{31}
+\contentsline {paragraph}{}{31}
+\contentsline {paragraph}{}{31}
+\contentsline {paragraph}{}{32}
+\contentsline {section}{\numberline {5}Energ\IeC {\'\i }a hidroel\IeC {\'e}ctrica}{33}
+\contentsline {subsection}{\numberline {5.1}Enunciado 12.6}{33}
+\contentsline {paragraph}{}{33}
+\contentsline {paragraph}{}{33}
+\contentsline {paragraph}{}{33}
+\contentsline {subsection}{\numberline {5.2}Modelo}{33}
+\contentsline {section}{\numberline {6}Generaci\IeC {\'o}n de energ\IeC {\'\i }a}{36}
+\contentsline {subsection}{\numberline {6.1}Enunciado 12.5}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {paragraph}{}{36}
+\contentsline {subsection}{\numberline {6.2}Modelo 12.5}{37}
+\contentsline {subsection}{\numberline {6.3}Modelo CPLEX 12-15}{40}
+\contentsline {subsection}{\numberline {6.4}Solucion en CPLEX}{43}
+\contentsline {paragraph}{}{43}
+\contentsline {paragraph}{}{43}
+\contentsline {paragraph}{}{44}
+\contentsline {section}{\numberline {7}Energ\IeC {\'\i }a hidroel\IeC {\'e}ctrica}{45}
+\contentsline {subsection}{\numberline {7.1}Enunciado 12.6}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {paragraph}{}{45}
+\contentsline {subsection}{\numberline {7.2}Modelo}{45}
+\contentsline {section}{\numberline {8}Colecci\IeC {\'o}n de leche}{48}
+\contentsline {subsection}{\numberline {8.1}Enunciado}{48}
+\contentsline {paragraph}{}{48}
+\contentsline {paragraph}{}{48}
+\contentsline {paragraph}{}{48}
